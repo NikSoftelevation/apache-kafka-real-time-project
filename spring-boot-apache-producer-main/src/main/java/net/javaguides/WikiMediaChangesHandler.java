@@ -8,17 +8,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 
-@RequiredArgsConstructor
+
 public class WikiMediaChangesHandler implements EventHandler {
 
-
-    @Autowired
     private KafkaTemplate<String,String> kafkaTemplate;
 
     private static final Logger LOGGER= LoggerFactory.getLogger(WikiMediaChangesHandler.class);
 
     private String topic;
 
+    public WikiMediaChangesHandler(KafkaTemplate<String, String> kafkaTemplate,String topic) {
+        this.kafkaTemplate = kafkaTemplate;
+        this.topic=topic;
+    }
     @Override
     public void onOpen() throws Exception {
     }
