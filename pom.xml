@@ -15,6 +15,7 @@
 	<description>Project for Spring Boot and Kafka</description>
 	<modules>
 		<module>spring-boot-apache-producer-main</module>
+		<module>kafka-consumer-database</module>
 	</modules>
 	<packaging>pom</packaging>
 	<properties>
